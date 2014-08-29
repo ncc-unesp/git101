@@ -241,6 +241,8 @@ of Git as well as adding many of its own features.
 
 \section{Git Concepts}
 
+\frame{\insertsection}
+
 \begin{frame}
 \frametitle{Three States}
 Commited, modified and staged:
@@ -327,17 +329,167 @@ $ git log --pretty=format:"%h - %an, %ar : %s"
 \end{lstlisting}
 \end{frame}
 
-\section{Branches and tags}
+\begin{frame}[fragile]
+\frametitle{Remote work}
+\begin{lstlisting}
+$ git remote
+$ git remote -v
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Remote - Local}
+\begin{lstlisting}
+$ git pull
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Local - Remote}
+\begin{lstlisting}
+$ git push origin master
+\end{lstlisting}
+\end{frame}
+
+\section{Tags and branches}
+\frame{\insertsection}
+
+\begin{frame}[fragile]
+\frametitle{Listing tags}
+\begin{lstlisting}
+$ git tag
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Creating tags}
+\begin{itemize}
+  \item lightweight vs annotated
+\end{itemize}
+\begin{lstlisting}
+$ git tag -a v1.4 -m 'my version 1.4'
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Sharing tags}
+\begin{itemize}
+  \item By default, the git push command doesn’t transfer tags to remote
+servers.
+\end{itemize}
+\begin{lstlisting}
+$ git push origin master --tags
+\end{lstlisting}
+\end{frame}
+
 \begin{frame}
-\frametitle{Simple scenario}
+\frametitle{Branching}
 \begin{center}
-  \includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{imgs/screen06.png}
+  \includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{imgs/branch01.png}
 \end{center}
 \end{frame}
 
+\begin{frame}
+\frametitle{Branching}
+\begin{center}
+  \includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{imgs/branch02.png}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Branching - Creating a new branch}
+\begin{lstlisting}
+$ git branch testing
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}
+\frametitle{Branching}
+\begin{center}
+  \includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{imgs/branch03.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Branching}
+\begin{itemize}
+  \item The git branch command only created a new branch — it didn’t switch to
+that.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Branching}
+\begin{center}
+  \includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{imgs/branch04.png}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Branching}
+\begin{lstlisting}
+$ git checkout testing
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}
+\frametitle{Branching}
+\begin{center}
+  \includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{imgs/branch05.png}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Branching}
+\begin{lstlisting}
+$ vim test.rb
+$ git commit -a -m 'made a change'
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}
+\frametitle{Branching}
+\begin{center}
+  \includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{imgs/branch06.png}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Branching}
+\begin{lstlisting}
+$ git checkout master
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}
+\frametitle{Branching}
+\begin{center}
+  \includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{imgs/branch07.png}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Branching}
+\begin{lstlisting}
+$ vim test.rb
+$ git commit -a -m 'made other changes'
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}
+\frametitle{Branching}
+\begin{center}
+  \includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{imgs/branch08.png}
+\end{center}
+\end{frame}
+
+\section{Hands on}
+
+\frame{\insertsection}
 
 \section{Advanced}
 
+\frame{\insertsection}
 \begin{frame}
 \frametitle{Fixing merge conflicts}
 \begin{itemize}
